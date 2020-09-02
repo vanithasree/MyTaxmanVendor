@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GetStartedViewController: UIViewController {
+class GetStartedViewController: BaseViewController {
     
     @IBOutlet weak var loginBtn: UIButton!
     @IBOutlet weak var loginBgView: UIView!
@@ -20,6 +20,17 @@ class GetStartedViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.setupViewUI()
+        // Do any additional setup after loading the view.
+    }
+    
+    func setupViewUI() {
+        isTransparent = true
+        isHideNavigationBar = true
+    }
     
     @IBAction func onTapNewLeadsBtn(_ sender: UIButton) {
         let vendorRegistrationVC = VendorRegistrationViewController.instantiateFromAppStoryboard(appStoryboard: .Auth)

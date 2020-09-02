@@ -35,6 +35,11 @@ class VendorRegistrationViewController: BaseViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+          super.viewWillAppear(true)
+          isHideNavigationBar = false
+      }
+    
     func setViewUI() {
         self.title = "Step 1"
         

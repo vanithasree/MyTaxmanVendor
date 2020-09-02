@@ -31,6 +31,11 @@ class LoginViewController: BaseViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+          super.viewWillAppear(true)
+          isHideNavigationBar = false
+      }
+    
     func setupViewUI() {
         
         isTransparent = true
