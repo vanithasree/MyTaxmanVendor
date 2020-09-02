@@ -125,6 +125,9 @@
 		0BE7C27A24F538A400B97238 /* RegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE7C27924F538A400B97238 /* RegisterModel.swift */; };
 		0BE7C27C24F53BDB00B97238 /* OTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE7C27B24F53BDB00B97238 /* OTPViewController.swift */; };
 		0BE7C27E24F5569C00B97238 /* ForgotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE7C27D24F5569C00B97238 /* ForgotViewController.swift */; };
+		0BF6D2BE24FFE9E800586C51 /* VenProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF6D2BD24FFE9E800586C51 /* VenProfile.swift */; };
+		0BF6D2C024FFEA0600586C51 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF6D2BF24FFEA0600586C51 /* ProfileViewModel.swift */; };
+		0BF6D2C324FFEA3500586C51 /* ProfileApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF6D2C224FFEA3500586C51 /* ProfileApiManager.swift */; };
 		0BF9EF9A24FE04D4000EB627 /* NotReviewedListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF9EF9824FE04D4000EB627 /* NotReviewedListTableViewCell.swift */; };
 		0BF9EF9B24FE04D4000EB627 /* NotReviewedListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BF9EF9924FE04D4000EB627 /* NotReviewedListTableViewCell.xib */; };
 		0BF9EF9D24FE110F000EB627 /* SendAReplyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF9EF9C24FE110F000EB627 /* SendAReplyViewController.swift */; };
@@ -306,6 +309,9 @@
 		0BE7C27924F538A400B97238 /* RegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModel.swift; sourceTree = "<group>"; };
 		0BE7C27B24F53BDB00B97238 /* OTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewController.swift; sourceTree = "<group>"; };
 		0BE7C27D24F5569C00B97238 /* ForgotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotViewController.swift; sourceTree = "<group>"; };
+		0BF6D2BD24FFE9E800586C51 /* VenProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenProfile.swift; sourceTree = "<group>"; };
+		0BF6D2BF24FFEA0600586C51 /* ProfileViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		0BF6D2C224FFEA3500586C51 /* ProfileApiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileApiManager.swift; sourceTree = "<group>"; };
 		0BF9EF9824FE04D4000EB627 /* NotReviewedListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotReviewedListTableViewCell.swift; sourceTree = "<group>"; };
 		0BF9EF9924FE04D4000EB627 /* NotReviewedListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotReviewedListTableViewCell.xib; sourceTree = "<group>"; };
 		0BF9EF9C24FE110F000EB627 /* SendAReplyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendAReplyViewController.swift; sourceTree = "<group>"; };
@@ -543,6 +549,7 @@
 		0B90154824ECF41700ACE457 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				0BF6D2BF24FFEA0600586C51 /* ProfileViewModel.swift */,
 				3B994CFF24FFC7BA00E1C8B4 /* InboxViewModel.swift */,
 				0BE7C25A24F4F48100B97238 /* AuthViewModel.swift */,
 				0B7FB91324F62F3500DCFD07 /* LeadViewModel.swift */,
@@ -653,6 +660,7 @@
 		0BE4347224ED5440000F6C22 /* ApiManagers */ = {
 			isa = PBXGroup;
 			children = (
+				0BF6D2C124FFEA0A00586C51 /* Profile */,
 				3B994D2624FFC82400E1C8B4 /* Inbox */,
 				0BAB4BC224FD681900C515D9 /* Reviews */,
 				0B433B5E24FC34CE00A7BD66 /* Calls */,
@@ -720,6 +728,7 @@
 		0BE434CD24ED581E000F6C22 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				0BF6D2BC24FFE9C700586C51 /* Profile */,
 				3B994CF824FFC79F00E1C8B4 /* Inbox */,
 				0BAB4BC524FD687900C515D9 /* Reviews */,
 				0B433B6124FC357500A7BD66 /* Calls */,
@@ -822,6 +831,22 @@
 				0BAB4BB724FD350D00C515D9 /* CallSettingsViewController.swift */,
 			);
 			path = Calls;
+			sourceTree = "<group>";
+		};
+		0BF6D2BC24FFE9C700586C51 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				0BF6D2BD24FFE9E800586C51 /* VenProfile.swift */,
+			);
+			name = Profile;
+			sourceTree = "<group>";
+		};
+		0BF6D2C124FFEA0A00586C51 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				0BF6D2C224FFEA3500586C51 /* ProfileApiManager.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		11CF1DA487525BE31B416E81 /* Frameworks */ = {
@@ -1206,6 +1231,7 @@
 				0BE4348E24ED5495000F6C22 /* StringExtension.swift in Sources */,
 				3B994CFD24FFC7A900E1C8B4 /* VendorProfileModel.swift in Sources */,
 				3B994D1F24FFC7DC00E1C8B4 /* ChatTableViewCell.swift in Sources */,
+				0BF6D2BE24FFE9E800586C51 /* VenProfile.swift in Sources */,
 				0B7FB90D24F6183E00DCFD07 /* FilterViewController.swift in Sources */,
 				0B433B5624F8008A00A7BD66 /* StripeManager.swift in Sources */,
 				0BE434BE24ED56C8000F6C22 /* NetworkManager.swift in Sources */,
@@ -1223,6 +1249,7 @@
 				0B90151B24ECF02D00ACE457 /* ViewController.swift in Sources */,
 				0BE4348F24ED5495000F6C22 /* UIViewExtension.swift in Sources */,
 				0BAB4BC424FD683800C515D9 /* ReviewApiManager.swift in Sources */,
+				0BF6D2C324FFEA3500586C51 /* ProfileApiManager.swift in Sources */,
 				0BE4348424ED5495000F6C22 /* UITextViewExtension.swift in Sources */,
 				0BE7C25824F4ECF500B97238 /* GoogleApiHelper.swift in Sources */,
 				3B994CF324FFC77500E1C8B4 /* InboxDetailsViewController.swift in Sources */,
@@ -1249,6 +1276,7 @@
 				3B994D1624FFC7DC00E1C8B4 /* RadioTableViewCell.swift in Sources */,
 				0BE7C24B24F4DE6800B97238 /* ServiceListTableViewCell.swift in Sources */,
 				3B994CF524FFC77500E1C8B4 /* InboxFilterViewController.swift in Sources */,
+				0BF6D2C024FFEA0600586C51 /* ProfileViewModel.swift in Sources */,
 				3B994D0024FFC7BA00E1C8B4 /* InboxViewModel.swift in Sources */,
 				0BE434B924ED56C7000F6C22 /* ImageManager.swift in Sources */,
 				0BE7C27824F5252300B97238 /* TBViewController.swift in Sources */,
