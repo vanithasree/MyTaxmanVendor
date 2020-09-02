@@ -15,7 +15,7 @@ class InboxViewModel {
         InboxApiManager().requestCusinboxlist(input: input, handler: handler)
     }
     
-    func requekstChat(input: Parameters, handler: @escaping (_ user: ChatBase?, _ error: AlertMessage?)->()) {
+    func requestChat(input: Parameters, handler: @escaping (_ user: ChatBase?, _ error: AlertMessage?)->()) {
         InboxApiManager().requestChat(input: input, handler: handler)
     }
     

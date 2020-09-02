@@ -39,7 +39,7 @@ extension InboxApi: EndPointType {
         switch self {
             
         case .cusinboxlist:
-            return "/cusinboxlist"
+            return "/veninbox_quote"
         case .chat:
             return "/chat"
         case .send_chat:

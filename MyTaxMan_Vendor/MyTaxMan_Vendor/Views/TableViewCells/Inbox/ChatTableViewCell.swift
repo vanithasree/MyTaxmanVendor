@@ -74,10 +74,11 @@ class ChatTableViewCell: UITableViewCell {
 //            profileImageView.load(from: Constant.imageBaseUrlString + profilePic)
 //        }
 //        else {
-//            profileImageView.image = UIImage(named: "profile")
+        readStatusImageView.image = UIImage(named: "tick")?.withRenderingMode(.alwaysTemplate)
+        readStatusImageView.tintColor = ColorManager.darkTheme.color
 //        }
         
-        nameLabel.text = data.vendorname ?? ""
+        nameLabel.text = data.customername ?? ""
         var quote_status = ""
         switch data.quote_status ?? "" {
         case "0":
@@ -101,7 +102,7 @@ class ChatTableViewCell: UITableViewCell {
         }
         jobStatusLabel.text = "  \(quote_status)  "
         chatLabel.text = data.category ?? ""
-        lastMessageLabel.text = data.rmsg?.first?.recent_message ?? ""
+        lastMessageLabel.text = data.message ?? ""
         
         if let acceptedDate = data.quote_accepted_on, !acceptedDate.isEmpty {
             
