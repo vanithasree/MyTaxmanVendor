@@ -134,11 +134,11 @@ extension ChatViewController {
     func requestSendChat() {
         LoadingIndicator.shared.show(forView: self.view)
         let params: Parameters = [
-            "customerid": UserDetails.shared.userId ,
-            "vendorid" : inbox?.vendorid ?? "",
+            "customerid": inbox?.customerid ?? "",
+            "vendorid" : UserDetails.shared.userId,
             "taskid" : inbox?.taskid ?? "",
             "chatmessage": chatTextView.text ?? "",
-            "sender": "Customer",
+            "sender": "vendor",
             "device_currentdatetime" : Date().toString(format: "yyyy-MM-dd HH:mm:ss"),
             "chat_pic": ""
         ]
