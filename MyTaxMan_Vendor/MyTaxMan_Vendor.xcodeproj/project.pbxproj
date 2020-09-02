@@ -128,6 +128,12 @@
 		0BF6D2BE24FFE9E800586C51 /* VenProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF6D2BD24FFE9E800586C51 /* VenProfile.swift */; };
 		0BF6D2C024FFEA0600586C51 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF6D2BF24FFEA0600586C51 /* ProfileViewModel.swift */; };
 		0BF6D2C324FFEA3500586C51 /* ProfileApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF6D2C224FFEA3500586C51 /* ProfileApiManager.swift */; };
+		0BF6D2C724FFEEAE00586C51 /* ProfileHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BF6D2C524FFEEAD00586C51 /* ProfileHeaderTableViewCell.xib */; };
+		0BF6D2C824FFEEAE00586C51 /* ProfileHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF6D2C624FFEEAE00586C51 /* ProfileHeaderTableViewCell.swift */; };
+		0BF6D2CA24FFF02600586C51 /* ProfileScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF6D2C924FFF02600586C51 /* ProfileScoreViewController.swift */; };
+		0BF6D2CD24FFF70400586C51 /* ProfileScoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF6D2CB24FFF70400586C51 /* ProfileScoreTableViewCell.swift */; };
+		0BF6D2CE24FFF70400586C51 /* ProfileScoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BF6D2CC24FFF70400586C51 /* ProfileScoreTableViewCell.xib */; };
+		0BF6D2D02500106600586C51 /* AddDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF6D2CF2500106600586C51 /* AddDescriptionViewController.swift */; };
 		0BF9EF9A24FE04D4000EB627 /* NotReviewedListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF9EF9824FE04D4000EB627 /* NotReviewedListTableViewCell.swift */; };
 		0BF9EF9B24FE04D4000EB627 /* NotReviewedListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BF9EF9924FE04D4000EB627 /* NotReviewedListTableViewCell.xib */; };
 		0BF9EF9D24FE110F000EB627 /* SendAReplyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF9EF9C24FE110F000EB627 /* SendAReplyViewController.swift */; };
@@ -312,6 +318,12 @@
 		0BF6D2BD24FFE9E800586C51 /* VenProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenProfile.swift; sourceTree = "<group>"; };
 		0BF6D2BF24FFEA0600586C51 /* ProfileViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		0BF6D2C224FFEA3500586C51 /* ProfileApiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileApiManager.swift; sourceTree = "<group>"; };
+		0BF6D2C524FFEEAD00586C51 /* ProfileHeaderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileHeaderTableViewCell.xib; sourceTree = "<group>"; };
+		0BF6D2C624FFEEAE00586C51 /* ProfileHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		0BF6D2C924FFF02600586C51 /* ProfileScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScoreViewController.swift; sourceTree = "<group>"; };
+		0BF6D2CB24FFF70400586C51 /* ProfileScoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScoreTableViewCell.swift; sourceTree = "<group>"; };
+		0BF6D2CC24FFF70400586C51 /* ProfileScoreTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileScoreTableViewCell.xib; sourceTree = "<group>"; };
+		0BF6D2CF2500106600586C51 /* AddDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDescriptionViewController.swift; sourceTree = "<group>"; };
 		0BF9EF9824FE04D4000EB627 /* NotReviewedListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotReviewedListTableViewCell.swift; sourceTree = "<group>"; };
 		0BF9EF9924FE04D4000EB627 /* NotReviewedListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotReviewedListTableViewCell.xib; sourceTree = "<group>"; };
 		0BF9EF9C24FE110F000EB627 /* SendAReplyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendAReplyViewController.swift; sourceTree = "<group>"; };
@@ -750,6 +762,7 @@
 		0BE7C24724F4DE5000B97238 /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				0BF6D2C424FFEE9100586C51 /* Profile */,
 				3B994D2124FFC7ED00E1C8B4 /* Inbox */,
 				0BAB4BBD24FD646700C515D9 /* Reviews */,
 				0B433B5924FC2FC000A7BD66 /* Calls */,
@@ -819,6 +832,8 @@
 			isa = PBXGroup;
 			children = (
 				0BE7C27524F523A500B97238 /* SettingsViewController.swift */,
+				0BF6D2C924FFF02600586C51 /* ProfileScoreViewController.swift */,
+				0BF6D2CF2500106600586C51 /* AddDescriptionViewController.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -845,6 +860,17 @@
 			isa = PBXGroup;
 			children = (
 				0BF6D2C224FFEA3500586C51 /* ProfileApiManager.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		0BF6D2C424FFEE9100586C51 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				0BF6D2C624FFEEAE00586C51 /* ProfileHeaderTableViewCell.swift */,
+				0BF6D2C524FFEEAD00586C51 /* ProfileHeaderTableViewCell.xib */,
+				0BF6D2CB24FFF70400586C51 /* ProfileScoreTableViewCell.swift */,
+				0BF6D2CC24FFF70400586C51 /* ProfileScoreTableViewCell.xib */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -1036,6 +1062,7 @@
 				0B7FB90124F5FE4200DCFD07 /* MobileAndEmailTableViewCell.xib in Resources */,
 				0BAB4BC124FD647700C515D9 /* ReviewedListTableViewCell.xib in Resources */,
 				0BE7C26324F5227B00B97238 /* Calls.storyboard in Resources */,
+				0BF6D2CE24FFF70400586C51 /* ProfileScoreTableViewCell.xib in Resources */,
 				0BE7C26724F5229200B97238 /* Profile.storyboard in Resources */,
 				0BE434C924ED56C8000F6C22 /* Poppins-Thin.ttf in Resources */,
 				3B994D2024FFC7DC00E1C8B4 /* RadioTableViewCell.xib in Resources */,
@@ -1055,6 +1082,7 @@
 				0BE434C024ED56C8000F6C22 /* incoming.wav in Resources */,
 				0B433B5D24FC2FD400A7BD66 /* CallListTableViewCell.xib in Resources */,
 				3B994D1A24FFC7DC00E1C8B4 /* BusinessProfileTableViewCell.xib in Resources */,
+				0BF6D2C724FFEEAE00586C51 /* ProfileHeaderTableViewCell.xib in Resources */,
 				0B7FB8FB24F5E6D700DCFD07 /* LeadsListTableViewCell.xib in Resources */,
 				3B994D1324FFC7DC00E1C8B4 /* QuoteTableViewCell.xib in Resources */,
 				0BE434C624ED56C8000F6C22 /* Poppins-Regular.ttf in Resources */,
@@ -1217,6 +1245,7 @@
 				3B994D1924FFC7DC00E1C8B4 /* RightViewCell.swift in Sources */,
 				0BE7C24624F4DDA400B97238 /* ServicesListViewController.swift in Sources */,
 				0BE434C124ED56C8000F6C22 /* GCDUtils.swift in Sources */,
+				0BF6D2CD24FFF70400586C51 /* ProfileScoreTableViewCell.swift in Sources */,
 				0B7FB90024F5FE4200DCFD07 /* MobileAndEmailTableViewCell.swift in Sources */,
 				0BE434B724ED56C7000F6C22 /* APIManager.swift in Sources */,
 				0B433B5824FC258700A7BD66 /* SubmitQuote.swift in Sources */,
@@ -1258,6 +1287,7 @@
 				3B994CF024FFC77500E1C8B4 /* BusinessProfileViewController.swift in Sources */,
 				0BE4349324ED5495000F6C22 /* NotificationExtension.swift in Sources */,
 				0BAB4BB824FD350D00C515D9 /* CallSettingsViewController.swift in Sources */,
+				0BF6D2CA24FFF02600586C51 /* ProfileScoreViewController.swift in Sources */,
 				0BE434BD24ED56C8000F6C22 /* CameraHandler.swift in Sources */,
 				0B7FB90B24F6183300DCFD07 /* QuoteNowViewController.swift in Sources */,
 				0BE434BB24ED56C7000F6C22 /* AppStoryboards.swift in Sources */,
@@ -1271,6 +1301,7 @@
 				0B90151724ECF02D00ACE457 /* AppDelegate.swift in Sources */,
 				0B433B6324FC358600A7BD66 /* CallHistory.swift in Sources */,
 				3B994D1D24FFC7DC00E1C8B4 /* QuoteTableViewCell.swift in Sources */,
+				0BF6D2C824FFEEAE00586C51 /* ProfileHeaderTableViewCell.swift in Sources */,
 				0B90151924ECF02D00ACE457 /* SceneDelegate.swift in Sources */,
 				0B7FB8FA24F5E6D700DCFD07 /* LeadsListTableViewCell.swift in Sources */,
 				3B994D1624FFC7DC00E1C8B4 /* RadioTableViewCell.swift in Sources */,
@@ -1296,6 +1327,7 @@
 				0BE7C25124F4EBE700B97238 /* GetPlacesTableViewCell.swift in Sources */,
 				0BE4348624ED5495000F6C22 /* UIImageExtension.swift in Sources */,
 				0BE7C27224F5235200B97238 /* CallListViewController.swift in Sources */,
+				0BF6D2D02500106600586C51 /* AddDescriptionViewController.swift in Sources */,
 				0BE7C25724F4ECF500B97238 /* GoogleApiHelper+Nearby.swift in Sources */,
 				0B433B5C24FC2FD400A7BD66 /* CallListTableViewCell.swift in Sources */,
 				0B7FB91724F62F5B00DCFD07 /* LeadApiManager.swift in Sources */,
