@@ -12,6 +12,7 @@ class ChatListViewController: UIViewController {
     @IBOutlet var chatTableView: UITableView!
     @IBOutlet var searchTextField: UITextField!
     private var inboxViewModel = InboxViewModel()
+    var inboxSourceList: [Inboxlist] = []
     var inboxList: [Inboxlist] = [] {
         didSet{
             doOnMain {
@@ -109,13 +110,14 @@ extension ChatListViewController {
     func requestCusinboxlist() {
         LoadingIndicator.shared.show(forView: self.view)
         let params: Parameters = [
-            "customerid": UserDetails.shared.userId ,
+            "vendorid": UserDetails.shared.userId ,
         ]
         inboxViewModel.requestCusinboxlist(input: params) { (result: InboxListBase?, alert: AlertMessage?) in
             LoadingIndicator.shared.hide()
             if let result = result {
                 if let success = result.code, success == "1" {
-                    self.inboxList = result.desc?.ilist ?? []
+                    self.inboxList = result.desc ?? []
+                    self.inboxSourceList = result.desc ?? []
                 }else{
                     print("No response found.")
                     self.presentAlert(withTitle: error, message: "")
@@ -131,5 +133,13 @@ extension ChatListViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if searchTextField.text?.isBlank ?? false {
+            inboxList = inboxSourceList
+        }else {
+            inboxList = inboxSourceList.filter({($0.customername?.lowercased().contains(searchTextField.text ?? ""))!})
+        }
     }
 }

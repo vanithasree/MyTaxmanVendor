@@ -14,7 +14,6 @@ import Sinch
 
 class InboxDetailsViewController: BaseViewController {
     
-    
     @IBOutlet weak var valueLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var chatHeaderView: UIView!
@@ -40,7 +39,7 @@ class InboxDetailsViewController: BaseViewController {
         valueLabel.setLabelCustomProperties(titleText: inbox?.customername ?? "", textColor: .lightGray, font: UIFont(name:Font.FontName.PoppinsMedium.rawValue, size: Utility.dynamicSize(14)), numberOfLines: 0, alignment: .left)
         
         
-        self.setUpSegmentViewControl(segmentControl: segmentControl, bgColor: .white, titles: ["Quote Details","Chat", "Business Profile"])
+        self.setUpSegmentViewControl(segmentControl: segmentControl, bgColor: .white, titles: ["Quote Details","Chat", "Job Details"])
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {

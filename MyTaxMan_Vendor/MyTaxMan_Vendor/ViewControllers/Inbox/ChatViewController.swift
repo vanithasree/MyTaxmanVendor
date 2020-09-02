@@ -106,39 +106,39 @@ extension ChatViewController {
     @objc func requestChat() {
         LoadingIndicator.shared.show(forView: self.view)
         let params: Parameters = [
-            "customerid": UserDetails.shared.userId ,
-            "vendorid" : inbox?.vendorid ?? "",
+            "customerid": inbox?.customerid ?? "",
+            "vendorid" : UserDetails.shared.userId,
             "taskid" : inbox?.taskid ?? "",
         ]
-//        inboxViewModel.requestChat(input: params) { (result: ChatBase?, alert: AlertMessage?) in
-//            LoadingIndicator.shared.hide()
-//            if let result = result {
-//                if let success = result.code, success == "1" {
-//                    self.chatList = result.desc ?? []
-//                    doOnMain {
-//                        self.chatTableView.reloadData()
-//                        if self.chatList.count > 0 {
-//                            self.chatTableView.scrollToBottom()
-//                        }
-//                    }
-//                }else{
-//                    print("No response found.")
-//                    self.presentAlert(withTitle: error, message: "")
-//                }
-//            } else if let alert = alert {
-//                self.presentAlert(withTitle: "", message: alert.errorMessage)
-//            }
-//        }
+        inboxViewModel.requestChat(input: params) { (result: ChatBase?, alert: AlertMessage?) in
+            LoadingIndicator.shared.hide()
+            if let result = result {
+                if let success = result.code, success == "1" {
+                    self.chatList = result.desc ?? []
+                    doOnMain {
+                        self.chatTableView.reloadData()
+                        if self.chatList.count > 0 {
+                            self.chatTableView.scrollToBottom()
+                        }
+                    }
+                }else{
+                    print("No response found.")
+                    self.presentAlert(withTitle: error, message: "")
+                }
+            } else if let alert = alert {
+                self.presentAlert(withTitle: "", message: alert.errorMessage)
+            }
+        }
     }
     
     func requestSendChat() {
         LoadingIndicator.shared.show(forView: self.view)
         let params: Parameters = [
-            "customerid": UserDetails.shared.userId ,
-            "vendorid" : inbox?.vendorid ?? "",
+            "customerid": inbox?.customerid ?? "",
+            "vendorid" : UserDetails.shared.userId,
             "taskid" : inbox?.taskid ?? "",
             "chatmessage": chatTextView.text ?? "",
-            "sender": "Customer",
+            "sender": "vendor",
             "device_currentdatetime" : Date().toString(format: "yyyy-MM-dd HH:mm:ss"),
             "chat_pic": ""
         ]
