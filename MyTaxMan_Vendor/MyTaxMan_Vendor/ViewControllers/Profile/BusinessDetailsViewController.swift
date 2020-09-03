@@ -127,7 +127,7 @@ extension BusinessDetailsViewController : UITextFieldDelegate {
         if let field = textField as? TweeAttributedTextField {
             var errorMessage = ""
             
-            switch field  {
+            switch field {
             case businessNameTextField:
                 errorMessage =   authViewModel.validateBusinessName(text: field.text).errorMessage ?? ""
             case abnTextfield:
@@ -136,8 +136,6 @@ extension BusinessDetailsViewController : UITextFieldDelegate {
                 errorMessage = authViewModel.validateAddressLine1(field.text).errorMessage ?? ""
             case locationTextField:
                 errorMessage = authViewModel.validateAddressLine2(field.text).errorMessage ?? ""
-            case websiteTextField:
-                errorMessage = field.text?.isValidPassword
             case descriptionTextField:
                 errorMessage = authViewModel.validateLandline(text: field.text).errorMessage ?? ""
             default:
