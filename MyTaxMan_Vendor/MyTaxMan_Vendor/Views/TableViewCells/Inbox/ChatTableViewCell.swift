@@ -82,10 +82,10 @@ class ChatTableViewCell: UITableViewCell {
         var quote_status = ""
         switch data.quote_status ?? "" {
         case "0":
-            quote_status = "Quoted Received"
+            quote_status = "Quoted"
             break
         case "1":
-            quote_status = "Hired"
+            quote_status = "Mark as won"
             break
         case "2":
             quote_status = "Declined"
@@ -94,9 +94,18 @@ class ChatTableViewCell: UITableViewCell {
             quote_status = "Expired"
             break
         case "4":
-            quote_status = "Completed"
+            if data.task_status ?? "" == "0"{
+                quote_status = "Marked as won"
+            }else if data.task_status ?? "" == "1"{
+                quote_status = "Won"
+            }
             break
-            
+        case "5":
+            quote_status = "Drafted"
+            break
+        case "6":
+            quote_status = "Ignored"
+            break
         default:
             break
         }

@@ -12,13 +12,13 @@ class BusinessProfileViewController: UIViewController {
     @IBOutlet var profileTableView: UITableView!
     var inbox: Inboxlist?
     private var inboxViewModel = InboxViewModel()
-    var vendorProfile : VendorProfile_Base?
+    var vendorProfile : VendorLeadDetails_Desc?
     @IBOutlet var browseLeadButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         setupViews()
-        requestVenProfile()
+        requestVenLeadDetails()
     }
     
     func setupViews(){
@@ -29,7 +29,7 @@ class BusinessProfileViewController: UIViewController {
         profileTableView.estimatedRowHeight = UITableView.automaticDimension
         profileTableView.reloadData()
         
-        browseLeadButton.setGreenColor(btn: browseLeadButton, title: "Browse Leads")
+        browseLeadButton.setDarkGreenTheme(btn: browseLeadButton, title: "Browse Leads")
     }
     @IBAction func didTapBrowseLeadAction(_ sender: Any) {
         self.tabBarController?.selectedIndex = 0
@@ -69,15 +69,15 @@ extension BusinessProfileViewController: UITableViewDataSource {
         case 0:
             guard let cell : JobStatusTableViewCell = tableView.dequeueReusableCell(withIdentifier:
                 JobStatusTableViewCell.identifier) as? JobStatusTableViewCell else { return UITableViewCell() }
-            cell.setJobStatusValue(vendorProfile : vendorProfile, index: indexPath.row)
+            cell.setJobStatusValue(data: inbox, index: indexPath.row)
             return cell
         case 1:
             guard let cell : JobStatusTableViewCell = tableView.dequeueReusableCell(withIdentifier: JobStatusTableViewCell.identifier) as? JobStatusTableViewCell else { return UITableViewCell() }
-            cell.setContactValue(vendorProfile : vendorProfile, index: indexPath.row)
+            cell.setContactValue(vendorProfile: vendorProfile, index: indexPath.row)
             return cell
         case 2:
             guard let cell : QuoteTableViewCell = tableView.dequeueReusableCell(withIdentifier: QuoteTableViewCell.identifier) as? QuoteTableViewCell else { return UITableViewCell() }
-            cell.setJobValue(vendorProfile : vendorProfile, index: indexPath.row)
+            cell.setJobValue(vendorProfile: vendorProfile, index: indexPath.row)
             return cell
             
         default:
@@ -128,16 +128,16 @@ extension BusinessProfileViewController: UITableViewDelegate {
 }
 
 extension BusinessProfileViewController {
-    func requestVenProfile() {
+    func requestVenLeadDetails() {
         LoadingIndicator.shared.show(forView: self.view)
         let params: Parameters = [
-            "vendorid" : inbox?.vendorid ?? "",
+            "taskid" : inbox?.taskid ?? "",
         ]
-        inboxViewModel.requestVenProfile(input: params) { (result: VendorProfile_Base?, alert: AlertMessage?) in
+        inboxViewModel.requestVenLeadDetails(input: params) { (result: VendorLeadDetails_Base?, alert: AlertMessage?) in
             LoadingIndicator.shared.hide()
             if let result = result {
                 if let success = result.code, success == "1" {
-                    self.vendorProfile = result
+                    self.vendorProfile = result.desc
                     doOnMain {
                         self.profileTableView.reloadData()
                     }

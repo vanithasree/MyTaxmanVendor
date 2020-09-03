@@ -23,8 +23,8 @@ class InboxViewModel {
         InboxApiManager().requestSendChat(input: input, handler: handler)
     }
     
-    func requestVenProfile(input: Parameters, handler: @escaping (_ user: VendorProfile_Base?, _ error: AlertMessage?)->()) {
-        InboxApiManager().requestVenProfile(input: input, handler: handler)
+    func requestVenLeadDetails(input: Parameters, handler: @escaping (_ user: VendorLeadDetails_Base?, _ error: AlertMessage?)->()) {
+        InboxApiManager().requestVenLeadDetails(input: input, handler: handler)
     }
     
 //    func requestHireTechnician(input: Parameters, handler: @escaping (_ user: ResendOtpBase?, _ error: AlertMessage?)->()) {

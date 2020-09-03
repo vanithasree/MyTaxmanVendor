@@ -40,26 +40,59 @@ class JobStatusTableViewCell: UITableViewCell {
         return String(describing: self)
     }
     
-    func setJobStatusValue(vendorProfile : VendorProfile_Base?, index: Int){
+    func setJobStatusValue(data : Inboxlist?, index: Int){
         titleLabel.font  = UIFont(name:Font.FontName.PoppinsMedium.rawValue, size: Utility.dynamicSize(20.0))
         titleLabel.text = "Job Status"
-        subTitleLabel.text = " won "
+        var quote_status = ""
+        switch data?.quote_status ?? "" {
+        case "0":
+            quote_status = "Quoted"
+            break
+        case "1":
+            quote_status = "Mark as won"
+            break
+        case "2":
+            quote_status = "Declined"
+            break
+        case "3":
+            quote_status = "Expired"
+            break
+        case "4":
+            if data?.task_status ?? "" == "0"{
+                quote_status = "Marked as won"
+            }else if data?.task_status ?? "" == "1"{
+                quote_status = "Won"
+            }
+            break
+        case "5":
+            quote_status = "Drafted"
+            break
+        case "6":
+            quote_status = "Ignored"
+            break
+        default:
+            break
+        }
+        subTitleLabel.text = " \(quote_status) "
         subTitleLabel.layer.borderWidth = 1
         subTitleLabel.layer.borderColor = ColorManager.darkTheme.color.cgColor
         subTitleLabel.cornerRadius = 3
     }
     
-    func setContactValue(vendorProfile : VendorProfile_Base?, index: Int){
+    func setContactValue(vendorProfile : VendorLeadDetails_Desc?, index: Int){
         var title = ""
         var value = ""
         switch index {
         case 0:
             title = "Mobile Number"
-            value = vendorProfile?.desc?.first?.mobile_no ?? ""
+            value = vendorProfile?.ilist?.first?.mobile ?? ""
+            value = ValidationManager().hideMidCharsInMobileString(value)
             break
         case 1:
             title = "Email Address"
-            value = vendorProfile?.desc?.first?.mobile_no ?? ""
+            value =  vendorProfile?.ilist?.first?.email ?? ""
+            let components = value.components(separatedBy: "@")
+            value = ValidationManager().hideMidChars(components.first ?? "") + "@" + (components.last ?? "")
             break
         default:
             break

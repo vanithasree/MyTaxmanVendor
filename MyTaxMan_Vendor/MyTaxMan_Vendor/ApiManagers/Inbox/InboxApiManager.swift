@@ -13,7 +13,7 @@ enum InboxApi {
     case cusinboxlist
     case chat
     case send_chat
-    case venprofile
+    case ven_lead_details
     case hire_technician
     case ven_quote_decline_bycustomer
 }
@@ -44,8 +44,9 @@ extension InboxApi: EndPointType {
             return "/chat"
         case .send_chat:
             return "/send_chat"
-        case .venprofile:
-            return "/venprofile"
+        case .ven_lead_details:
+            return "/ven_lead_details"
+            
         case .hire_technician:
             return "/hire_technician"
         case .ven_quote_decline_bycustomer:
@@ -124,8 +125,8 @@ class InboxApiManager {
          }
      }
     
-    func requestVenProfile(input: Parameters, handler: @escaping (_ result: VendorProfile_Base?, _ error: AlertMessage?)->()) {
-        APIManager.shared().call(type: InboxApi.venprofile, params: input) { (result: VendorProfile_Base?,message: AlertMessage?) in
+    func requestVenLeadDetails(input: Parameters, handler: @escaping (_ result: VendorLeadDetails_Base?, _ error: AlertMessage?)->()) {
+        APIManager.shared().call(type: InboxApi.ven_lead_details, params: input) { (result: VendorLeadDetails_Base?,message: AlertMessage?) in
             if let result = result {
                 handler(result, nil)
             } else {
