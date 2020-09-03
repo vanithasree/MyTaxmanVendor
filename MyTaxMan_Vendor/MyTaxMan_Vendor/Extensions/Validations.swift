@@ -109,6 +109,15 @@ extension String {
         }
         return false
     }
+    func isValidUrl(string: String) -> Bool {
+        let types: NSTextCheckingResult.CheckingType = [.link]
+        let detector = try? NSDataDetector(types: types.rawValue)
+        guard (detector != nil && string.count > 0) else { return false }
+        if detector!.numberOfMatches(in: string, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: NSMakeRange(0, string.count)) > 0 {
+            return true
+        }
+        return false
+    }
     
     /// Password string is valid (between 5 to 15)
     var isValidPassword: Bool {

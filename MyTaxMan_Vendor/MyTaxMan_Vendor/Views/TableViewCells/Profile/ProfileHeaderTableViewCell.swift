@@ -45,15 +45,23 @@ class ProfileHeaderTableViewCell: UITableViewCell {
         
         jobsWonValueLabel.setLabelCustomProperties(titleText: "", textColor: .black, font: UIFont(name:Font.FontName.PoppinsMedium.rawValue, size: Utility.dynamicSize(18.0)), numberOfLines: 1, alignment: .center)
         
-        profileImageView.cornerRadius = profileImageView.frame.width / 2
+         profileImageView.layer.cornerRadius = profileImageView.frame.size.width/2.0
+    
         
         
+    }
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        profileImageView.layer.cornerRadius = profileImageView.frame.size.width/2.0
+        profileImageView.backgroundColor = .green
+        profileImageView.contentMode = .scaleAspectFit
+       
     }
     
     func setCellData(data: VenProfileBase?) {
         
         if let profilePic = data?.profile_pic, !profilePic.isEmpty {
-            profileImageView.load(from: profilePic)
+            profileImageView.load(from: "http://sunrisetechs.com//demo//MyTaxman//img//vendor//profilepic//1145f2c5aec5bd85.png")
         }
         else {
             profileImageView.image = UIImage(named: "profile")

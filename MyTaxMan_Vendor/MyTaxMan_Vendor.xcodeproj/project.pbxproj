@@ -134,6 +134,8 @@
 		0BF6D2CD24FFF70400586C51 /* ProfileScoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF6D2CB24FFF70400586C51 /* ProfileScoreTableViewCell.swift */; };
 		0BF6D2CE24FFF70400586C51 /* ProfileScoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BF6D2CC24FFF70400586C51 /* ProfileScoreTableViewCell.xib */; };
 		0BF6D2D02500106600586C51 /* AddDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF6D2CF2500106600586C51 /* AddDescriptionViewController.swift */; };
+		0BF6D2D22500653D00586C51 /* ContactDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF6D2D12500653D00586C51 /* ContactDetailsViewController.swift */; };
+		0BF6D2D42500716A00586C51 /* BusinessDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF6D2D32500716A00586C51 /* BusinessDetailsViewController.swift */; };
 		0BF9EF9A24FE04D4000EB627 /* NotReviewedListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF9EF9824FE04D4000EB627 /* NotReviewedListTableViewCell.swift */; };
 		0BF9EF9B24FE04D4000EB627 /* NotReviewedListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BF9EF9924FE04D4000EB627 /* NotReviewedListTableViewCell.xib */; };
 		0BF9EF9D24FE110F000EB627 /* SendAReplyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF9EF9C24FE110F000EB627 /* SendAReplyViewController.swift */; };
@@ -324,6 +326,8 @@
 		0BF6D2CB24FFF70400586C51 /* ProfileScoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScoreTableViewCell.swift; sourceTree = "<group>"; };
 		0BF6D2CC24FFF70400586C51 /* ProfileScoreTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileScoreTableViewCell.xib; sourceTree = "<group>"; };
 		0BF6D2CF2500106600586C51 /* AddDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDescriptionViewController.swift; sourceTree = "<group>"; };
+		0BF6D2D12500653D00586C51 /* ContactDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailsViewController.swift; sourceTree = "<group>"; };
+		0BF6D2D32500716A00586C51 /* BusinessDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessDetailsViewController.swift; sourceTree = "<group>"; };
 		0BF9EF9824FE04D4000EB627 /* NotReviewedListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotReviewedListTableViewCell.swift; sourceTree = "<group>"; };
 		0BF9EF9924FE04D4000EB627 /* NotReviewedListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotReviewedListTableViewCell.xib; sourceTree = "<group>"; };
 		0BF9EF9C24FE110F000EB627 /* SendAReplyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendAReplyViewController.swift; sourceTree = "<group>"; };
@@ -834,6 +838,8 @@
 				0BE7C27524F523A500B97238 /* SettingsViewController.swift */,
 				0BF6D2C924FFF02600586C51 /* ProfileScoreViewController.swift */,
 				0BF6D2CF2500106600586C51 /* AddDescriptionViewController.swift */,
+				0BF6D2D12500653D00586C51 /* ContactDetailsViewController.swift */,
+				0BF6D2D32500716A00586C51 /* BusinessDetailsViewController.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -1276,6 +1282,7 @@
 				0B7FB91224F62EDF00DCFD07 /* LeadList.swift in Sources */,
 				0BAB4BAD24FC372300C515D9 /* CallViewModel.swift in Sources */,
 				0B90151B24ECF02D00ACE457 /* ViewController.swift in Sources */,
+				0BF6D2D42500716A00586C51 /* BusinessDetailsViewController.swift in Sources */,
 				0BE4348F24ED5495000F6C22 /* UIViewExtension.swift in Sources */,
 				0BAB4BC424FD683800C515D9 /* ReviewApiManager.swift in Sources */,
 				0BF6D2C324FFEA3500586C51 /* ProfileApiManager.swift in Sources */,
@@ -1333,6 +1340,7 @@
 				0B7FB91724F62F5B00DCFD07 /* LeadApiManager.swift in Sources */,
 				3B994CF424FFC77500E1C8B4 /* QuoteDetailsViewController.swift in Sources */,
 				3B994CF124FFC77500E1C8B4 /* ChatViewController.swift in Sources */,
+				0BF6D2D22500653D00586C51 /* ContactDetailsViewController.swift in Sources */,
 				0BE4348924ED5495000F6C22 /* ArrayExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

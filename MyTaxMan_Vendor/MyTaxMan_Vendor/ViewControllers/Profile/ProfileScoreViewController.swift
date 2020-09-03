@@ -50,8 +50,22 @@ class ProfileScoreViewController: BaseViewController {
      // Pass the selected object to the new view controller.
      }
      */
+    func redirectToAddDescriptionVC() {
+        let desVC = AddDescriptionViewController.instantiateFromAppStoryboard(appStoryboard: .Profile)
+        desVC.hidesBottomBarWhenPushed = true
+        desVC.vendorProfileDetails = self.profileDetailsBaseForScoreScreen
+        self.navigationController?.pushViewController(desVC, animated: true)
+    }
+    func redirectToContactDetailsVC() {
+          let desVC = ContactDetailsViewController.instantiateFromAppStoryboard(appStoryboard: .Profile)
+          desVC.hidesBottomBarWhenPushed = true
+          desVC.vendorProfileDetails = self.profileDetailsBaseForScoreScreen
+          self.navigationController?.pushViewController(desVC, animated: true)
+      }
     
 }
+
+
 extension ProfileScoreViewController : UITableViewDataSource, UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -104,16 +118,17 @@ extension ProfileScoreViewController : UITableViewDataSource, UITableViewDelegat
             case 3:
                 print("upload profile picture")
             case 4:
+                self?.redirectToContactDetailsVC()
                 print("Edit contact information")
             case 5:
                 print("Add description")
+                self?.redirectToAddDescriptionVC()
             case 6:
                 print("Add reviews")
             default:
                 break
             }
         }
-        
         return cell
     }
     

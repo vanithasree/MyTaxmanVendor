@@ -43,9 +43,9 @@ class SettingsViewController: BaseViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-           super.viewWillAppear(animated)
-           self.getProfileDetails()
-       }
+        super.viewWillAppear(animated)
+        self.getProfileDetails()
+    }
     
     /*
      // MARK: - Navigation
@@ -108,8 +108,18 @@ extension SettingsViewController : UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.redirectToProfileScoreVC()
+        switch indexPath.row {
+        case 1:
+            self.redirectToProfileScoreVC()
+        case 4:
+            self.redirectToBusinessDetailsVC()
+        case 5:
+            self.redirectToContactVC()
+        default:
+            break
+        }
     }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         tableView.estimatedRowHeight = 44.0 // standard tableViewCell height
@@ -131,9 +141,18 @@ extension SettingsViewController {
         scoreVC.profileDetailsBaseForScoreScreen = self.profileDetailsBase
         self.navigationController?.pushViewController(scoreVC, animated: true)
     }
-    
-    
-    
+    func redirectToContactVC() {
+        let scoreVC = ContactDetailsViewController.instantiateFromAppStoryboard(appStoryboard: .Profile)
+        scoreVC.hidesBottomBarWhenPushed = true
+        scoreVC.vendorProfileDetails = self.profileDetailsBase
+        self.navigationController?.pushViewController(scoreVC, animated: true)
+    }
+    func redirectToBusinessDetailsVC() {
+        let scoreVC = BusinessDetailsViewController.instantiateFromAppStoryboard(appStoryboard: .Profile)
+        scoreVC.hidesBottomBarWhenPushed = true
+        scoreVC.vendorProfileDetails = self.profileDetailsBase
+        self.navigationController?.pushViewController(scoreVC, animated: true)
+    }
     func getProfileDetails() {
         if isNeedToLoadApi {
             
