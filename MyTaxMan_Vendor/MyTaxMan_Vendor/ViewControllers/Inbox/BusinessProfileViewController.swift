@@ -93,7 +93,7 @@ extension BusinessProfileViewController: UITableViewDataSource {
         switch section {
         case 0:
             return UIView()
-            //headerView.titleLabel.text = "Job Status"
+        //headerView.titleLabel.text = "Job Status"
         case 1:
             headerView.titleLabel.text = "Contact Details"
             break

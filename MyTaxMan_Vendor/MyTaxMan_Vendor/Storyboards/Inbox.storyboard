@@ -235,9 +235,12 @@
                                     <constraint firstItem="Dum-iI-Nvf" firstAttribute="leading" secondItem="PKS-VZ-kv5" secondAttribute="trailing" constant="15" id="rQK-P3-Q0Q"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lWU-HS-FH7" customClass="BetterSegmentedControl" customModule="BetterSegmentedControl">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lWU-HS-FH7" customClass="WMSegment" customModule="WMSegmentControl">
                                 <rect key="frame" x="0.0" y="98" width="414" height="54"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="buttonTitles" value="Quote Details,Chat,Job Details"/>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JKG-zq-vFZ">
                                 <rect key="frame" x="0.0" y="152" width="414" height="710"/>
