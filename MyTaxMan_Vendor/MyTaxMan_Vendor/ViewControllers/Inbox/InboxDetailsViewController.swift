@@ -19,6 +19,7 @@ class InboxDetailsViewController: BaseViewController {
     @IBOutlet weak var chatHeaderView: UIView!
     @IBOutlet weak var voiceCallBtn: UIButton!
     @IBOutlet weak var videoCallBtn: UIButton!
+    @IBOutlet var menuButton: UIButton!
     @IBOutlet weak var backBtn: UIButton!
     @IBOutlet var segmentControl: BetterSegmentedControl!
     @IBOutlet var containerView: UIView!
@@ -70,6 +71,8 @@ class InboxDetailsViewController: BaseViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func didTapMenuAction(_ sender: Any) {
+    }
     @IBAction func onTappedVoiceCallBtn(_ sender: UIButton) {
 //        if (self.client?.isStarted())!{
 //            print(inbox?.ven_callid ?? "")

@@ -117,7 +117,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ALQ-ol-DPG">
-                                <rect key="frame" x="0.0" y="123.5" width="414" height="738.5"/>
+                                <rect key="frame" x="0.0" y="118.5" width="414" height="743.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="joA-3B-yOJ" id="cxq-zz-u3X"/>
@@ -125,7 +125,7 @@
                                 </connections>
                             </tableView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q11-sL-3VC">
-                                <rect key="frame" x="20" y="54" width="374" height="58"/>
+                                <rect key="frame" x="20" y="54" width="374" height="54"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -139,7 +139,7 @@
                             <constraint firstItem="HSS-XF-dqi" firstAttribute="bottom" secondItem="ALQ-ol-DPG" secondAttribute="bottom" id="l5s-nb-mle"/>
                             <constraint firstItem="ALQ-ol-DPG" firstAttribute="leading" secondItem="lFN-7l-Hkv" secondAttribute="leading" id="r6p-nu-pWv"/>
                             <constraint firstItem="HSS-XF-dqi" firstAttribute="trailing" secondItem="ALQ-ol-DPG" secondAttribute="trailing" id="wc9-Kt-4bh"/>
-                            <constraint firstItem="q11-sL-3VC" firstAttribute="height" secondItem="lFN-7l-Hkv" secondAttribute="height" multiplier="0.065" id="y7X-Mu-CkJ"/>
+                            <constraint firstItem="q11-sL-3VC" firstAttribute="height" secondItem="lFN-7l-Hkv" secondAttribute="height" multiplier="0.06" id="y7X-Mu-CkJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="HSS-XF-dqi"/>
                     </view>
@@ -174,40 +174,47 @@
                                             <action selector="onTappedBackBtn:" destination="N0L-S1-8Yi" eventType="touchUpInside" id="DdK-hO-6HY"/>
                                         </connections>
                                     </button>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="7ks-ld-q7R">
-                                        <rect key="frame" x="329" y="12" width="75" height="30"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7ks-ld-q7R">
+                                        <rect key="frame" x="294" y="12" width="110" height="30"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P6g-62-F8D">
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P6g-62-F8D">
                                                 <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
                                                 <state key="normal" backgroundImage="video"/>
                                                 <connections>
                                                     <action selector="onTappedVideoBtn:" destination="N0L-S1-8Yi" eventType="touchUpInside" id="xzX-2P-Uqk"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Du-9v-bS6">
-                                                <rect key="frame" x="45" y="0.0" width="30" height="30"/>
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Du-9v-bS6">
+                                                <rect key="frame" x="40" y="0.0" width="30" height="30"/>
                                                 <state key="normal" backgroundImage="call"/>
                                                 <connections>
                                                     <action selector="onTappedVoiceCallBtn:" destination="N0L-S1-8Yi" eventType="touchUpInside" id="5sn-rZ-bZD"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t8n-pa-fUx">
+                                                <rect key="frame" x="80" y="0.0" width="30" height="30"/>
+                                                <state key="normal" image="verticalDots"/>
+                                                <connections>
+                                                    <action selector="didTapMenuAction:" destination="N0L-S1-8Yi" eventType="touchUpInside" id="qxh-AW-4vG"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="5bn-2A-hB7"/>
-                                            <constraint firstAttribute="width" constant="75" id="mUe-qJ-7nA"/>
+                                            <constraint firstAttribute="width" constant="110" id="mUe-qJ-7nA"/>
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Dum-iI-Nvf">
-                                        <rect key="frame" x="50" y="5" width="274" height="44"/>
+                                        <rect key="frame" x="50" y="5" width="239" height="44"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MCU-Nn-s0S">
-                                                <rect key="frame" x="0.0" y="0.0" width="274" height="22"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="239" height="22"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ilV-fc-G6D">
-                                                <rect key="frame" x="0.0" y="22" width="274" height="22"/>
+                                                <rect key="frame" x="0.0" y="22" width="239" height="22"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -270,6 +277,7 @@
                         <outlet property="backBtn" destination="PKS-VZ-kv5" id="xEF-fK-wey"/>
                         <outlet property="chatHeaderView" destination="Bsf-hj-XV7" id="uop-2a-kje"/>
                         <outlet property="containerView" destination="JKG-zq-vFZ" id="rGl-FA-lj6"/>
+                        <outlet property="menuButton" destination="t8n-pa-fUx" id="c3z-xu-egx"/>
                         <outlet property="nameLabel" destination="MCU-Nn-s0S" id="JZS-Ca-mWr"/>
                         <outlet property="scrollView" destination="3aF-JU-ET0" id="LBg-Aw-xco"/>
                         <outlet property="segmentControl" destination="lWU-HS-FH7" id="0G0-7d-xwz"/>
@@ -325,24 +333,36 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hwb-C4-Xxu">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="744"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="8Tr-x3-6Er" id="drR-dR-Xyo"/>
                                     <outlet property="delegate" destination="8Tr-x3-6Er" id="a8W-ey-7vp"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OeN-Md-zRW">
+                                <rect key="frame" x="0.0" y="804" width="414" height="58"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="didTapBrowseLeadAction:" destination="8Tr-x3-6Er" eventType="touchUpInside" id="3fI-b8-aDB"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="Y8a-RL-NO5" firstAttribute="bottom" secondItem="OeN-Md-zRW" secondAttribute="bottom" id="6Ki-9P-CTI"/>
                             <constraint firstItem="hwb-C4-Xxu" firstAttribute="top" secondItem="Y8a-RL-NO5" secondAttribute="top" id="DoQ-AA-b27"/>
+                            <constraint firstItem="OeN-Md-zRW" firstAttribute="leading" secondItem="Y8a-RL-NO5" secondAttribute="leading" id="GtL-Wb-ab5"/>
+                            <constraint firstItem="Y8a-RL-NO5" firstAttribute="trailing" secondItem="OeN-Md-zRW" secondAttribute="trailing" id="QjY-ZR-BeT"/>
+                            <constraint firstItem="OeN-Md-zRW" firstAttribute="height" secondItem="1yM-iM-0oH" secondAttribute="height" multiplier="0.065" id="ZTM-nj-Lg9"/>
                             <constraint firstItem="Y8a-RL-NO5" firstAttribute="trailing" secondItem="hwb-C4-Xxu" secondAttribute="trailing" id="h7y-t2-ofR"/>
-                            <constraint firstItem="Y8a-RL-NO5" firstAttribute="bottom" secondItem="hwb-C4-Xxu" secondAttribute="bottom" id="nLY-oX-C2v"/>
                             <constraint firstItem="hwb-C4-Xxu" firstAttribute="leading" secondItem="Y8a-RL-NO5" secondAttribute="leading" id="nxt-tq-tRa"/>
+                            <constraint firstItem="OeN-Md-zRW" firstAttribute="top" secondItem="hwb-C4-Xxu" secondAttribute="bottom" multiplier="1.02" id="stR-q9-MQB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Y8a-RL-NO5"/>
                     </view>
                     <connections>
+                        <outlet property="browseLeadButton" destination="OeN-Md-zRW" id="60j-Ra-Suu"/>
                         <outlet property="profileTableView" destination="hwb-C4-Xxu" id="kpY-VA-vUx"/>
                     </connections>
                 </viewController>
@@ -863,6 +883,7 @@
         <image name="muteButton" width="62" height="62"/>
         <image name="send" width="30" height="30"/>
         <image name="speakerButton" width="62" height="62"/>
+        <image name="verticalDots" width="30" height="30"/>
         <image name="video" width="30" height="30"/>
         <image name="whiteBg" width="621" height="1344"/>
     </resources>

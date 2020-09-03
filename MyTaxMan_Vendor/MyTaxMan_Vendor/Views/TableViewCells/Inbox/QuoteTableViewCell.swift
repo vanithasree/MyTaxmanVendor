@@ -10,7 +10,6 @@ import UIKit
 
 class QuoteTableViewCell: UITableViewCell {
     @IBOutlet var titleLabel: UILabel!
-    //    @IBOutlet var subTitleLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -34,9 +33,6 @@ class QuoteTableViewCell: UITableViewCell {
     
     func setupViews(){
         titleLabel.font  = UIFont(name:Font.FontName.PoppinsMedium.rawValue, size: Utility.dynamicSize(16.0))
-        
-        //        subTitleLabel.font  = UIFont(name:Font.FontName.PoppinsMedium.rawValue, size: Utility.dynamicSize(14.0))
-        //        subTitleLabel.textColor = ColorManager.lightGrey.color
     }
     
     func setValue(data: QuoteDetail, index: Int, inbox: Inboxlist?){
@@ -95,24 +91,24 @@ class QuoteTableViewCell: UITableViewCell {
         titleLabel.attributedText = balanceAttributedString
     }
     
-    func setVendorValue(vendorProfile : VendorProfile_Base?, index: Int){
+    func setJobValue(vendorProfile : VendorProfile_Base?, index: Int){
         var title = ""
         var value = ""
         switch index {
-        case 1:
-            title = "Mobile Number"
+        case 0:
+            title = "Posted on"
             value = vendorProfile?.desc?.first?.mobile_no ?? ""
             break
-        case 2:
-            title = "Landline"
+        case 1:
+            title = "Location"
             value = vendorProfile?.desc?.first?.landline ?? ""
             break
-        case 3:
-            title = "Email"
+        case 2:
+            title = "Service Type"
             value = vendorProfile?.desc?.first?.email ?? ""
             break
-        case 4:
-            title = "Location"
+        case 3:
+            title = "Consultation Preference:"
             value = vendorProfile?.desc?.first?.location ?? ""
             break
         default:
@@ -128,4 +124,5 @@ class QuoteTableViewCell: UITableViewCell {
         titleLabel.attributedText = balanceAttributedString
 
     }
+    
 }

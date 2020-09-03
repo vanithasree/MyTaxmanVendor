@@ -33,7 +33,6 @@ class QuoteDetailsViewController: UIViewController {
     
     func setupViews(){
         quoteTableView.register(QuoteTableViewCell.nib, forCellReuseIdentifier: QuoteTableViewCell.identifier)
-        quoteTableView.register(JobDetailsTableViewCell.nib, forCellReuseIdentifier: JobDetailsTableViewCell.identifier)
         quoteTableView.register(JobHeaderView.nib, forHeaderFooterViewReuseIdentifier: JobHeaderView.identifier)
         quoteTableView.estimatedRowHeight = UITableView.automaticDimension
         quoteTableView.tableFooterView = UIView()

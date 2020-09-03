@@ -25,6 +25,7 @@ class JobHeaderView: UITableViewHeaderFooterView {
     }
     
     func setupViews(){
+        titleLabel.setLabelCustomProperties(titleText: "", textColor: .black, font: UIFont(name:Font.FontName.PoppinsMedium.rawValue, size: Utility.dynamicSize(20)), numberOfLines: 0, alignment: .left)
         titleLabel.numberOfLines = 0
     }
     

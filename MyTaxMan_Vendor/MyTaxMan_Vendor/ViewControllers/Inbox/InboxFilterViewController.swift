@@ -25,8 +25,6 @@ class InboxFilterViewController: UIViewController {
     }
     func setupViews() {
         
-        filterTableView.register(CheckBoxTableViewCell.nib, forCellReuseIdentifier: CheckBoxTableViewCell.identifier)
-        filterTableView.register(RadioTableViewCell.nib, forCellReuseIdentifier: RadioTableViewCell.identifier)
         filterTableView.tableFooterView = UIView()
         filterTableView.delegate = self
         filterTableView.dataSource = self
@@ -62,8 +60,7 @@ extension InboxFilterViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell : CheckBoxTableViewCell = tableView.dequeueReusableCell(withIdentifier: CheckBoxTableViewCell.identifier) as? CheckBoxTableViewCell else { return UITableViewCell() }
-        return cell
+        return UITableViewCell()
     }
 }
 
