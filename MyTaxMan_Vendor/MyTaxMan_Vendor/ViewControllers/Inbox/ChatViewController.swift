@@ -62,6 +62,9 @@ class ChatViewController: UIViewController {
     
     @IBAction func didTapSendAction(_ sender: Any) {
         self.view.endEditing(true)
+        if chatTextView.text == "Write a message" {
+            chatTextView.text = ""
+        }
         let verifyMessage : ValidationMessage = inboxViewModel.validateMessage(text: chatTextView.text)
         if verifyMessage.status {
             requestSendChat()

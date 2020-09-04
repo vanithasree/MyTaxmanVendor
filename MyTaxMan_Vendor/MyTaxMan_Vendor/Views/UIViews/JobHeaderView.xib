@@ -10,26 +10,30 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="JobHeaderView" customModule="MyTaxman_Customer" customModuleProvider="target">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="JobHeaderView" customModule="MyTaxMan_Vendor" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="374" height="112"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ega-B7-7hb">
                     <rect key="frame" x="0.0" y="0.0" width="374" height="112"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fUt-xb-pwj">
-                            <rect key="frame" x="20" y="10" width="334" height="92"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="zKY-TM-dYv">
+                            <rect key="frame" x="20" y="46" width="334" height="20.5"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fUt-xb-pwj">
+                                    <rect key="frame" x="0.0" y="0.0" width="334" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
-                        <constraint firstAttribute="bottom" secondItem="fUt-xb-pwj" secondAttribute="bottom" constant="10" id="3nh-Rh-3R0"/>
-                        <constraint firstAttribute="trailing" secondItem="fUt-xb-pwj" secondAttribute="trailing" constant="20" id="5aj-Kz-fG2"/>
-                        <constraint firstItem="fUt-xb-pwj" firstAttribute="leading" secondItem="ega-B7-7hb" secondAttribute="leading" constant="20" id="HoK-ga-OCm"/>
-                        <constraint firstItem="fUt-xb-pwj" firstAttribute="top" secondItem="ega-B7-7hb" secondAttribute="top" constant="10" id="rCq-B1-nYv"/>
+                        <constraint firstItem="zKY-TM-dYv" firstAttribute="leading" secondItem="ega-B7-7hb" secondAttribute="leading" constant="20" id="DIY-Jv-VgK"/>
+                        <constraint firstItem="zKY-TM-dYv" firstAttribute="centerY" secondItem="ega-B7-7hb" secondAttribute="centerY" id="GRw-fK-uKo"/>
+                        <constraint firstAttribute="trailing" secondItem="zKY-TM-dYv" secondAttribute="trailing" constant="20" id="fVr-5p-pY5"/>
                     </constraints>
                 </view>
             </subviews>
