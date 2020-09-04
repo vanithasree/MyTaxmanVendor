@@ -8,11 +8,13 @@
 
 import UIKit
 import Stripe
+import Alamofire
 
 
 class CheckOutViewController: BaseViewController {
     
     var choosenAmount : String = ""
+    private var profileViewModel = ProfileViewModel()
     
     lazy var cardTextField: STPPaymentCardTextField = {
         let cardTextField = STPPaymentCardTextField()
@@ -43,7 +45,7 @@ class CheckOutViewController: BaseViewController {
             view.rightAnchor.constraint(equalToSystemSpacingAfter: stackView.rightAnchor, multiplier: 2),
             stackView.topAnchor.constraint(equalToSystemSpacingBelow: view.topAnchor, multiplier: 20),
         ])
-        /*Stripe.setDefaultPublishableKey("pk_test_51GtHk9H5W0t1liVhtEfjefWJI8BHQbozVn18suKGYxG81ha7famiOMHjgMC4B5xjiIUWkKlEphVtxhZXyVflD70O00ZbZIuyWB")*/
+        Stripe.setDefaultPublishableKey("pk_test_51GtHk9H5W0t1liVhtEfjefWJI8BHQbozVn18suKGYxG81ha7famiOMHjgMC4B5xjiIUWkKlEphVtxhZXyVflD70O00ZbZIuyWB")
         // startCheckout()
     }
     func displayAlert(title: String, message: String, restartDemo: Bool = false) {
@@ -123,7 +125,8 @@ class CheckOutViewController: BaseViewController {
             }
                 // Payment succeeded, no additional action required
             else if clientSecret != nil && (requiresAction == nil || requiresAction == false) {
-                self?.displayAlert(title: "Payment succeeded", message: clientSecret ?? "", restartDemo: false)
+                self?.updatePaymentHistoryToApi(accessID: clientSecret ?? "")
+               // self?.displayAlert(title: "Payment succeeded", message: clientSecret ?? "", restartDemo: false)
             }
                 // Payment requires additional action
             else if clientSecret != nil && requiresAction == true && self != nil {
@@ -167,3 +170,31 @@ extension CheckOutViewController: STPAuthenticationContext {
     }
 }
 
+extension CheckOutViewController {
+    func updatePaymentHistoryToApi(accessID:String) {
+        let inputs : Parameters = [
+            "vendorid" : UserDetails.shared.userId,
+            "amount" : choosenAmount,
+            "device_currentdatetime" : Date().dateAndTimetoString(),
+            "payment_access_id" : accessID
+        ]
+        LoadingIndicator.shared.show(forView: self.view)
+        profileViewModel.rechargeVendorWallet(input: inputs) { (result: VenRechargeSuccessBase?, alert: AlertMessage?) in
+            LoadingIndicator.shared.hide()
+            if let result = result {
+                if let success = result.code, success == "1" {
+                    self.presentAlert(withTitle: "", message: "Amount has been added successfully") {
+                        self.navigationController?.popToRootViewController(animated: true)
+                    }
+                }
+                else
+                {
+                    self.presentAlert(withTitle: "", message: "Please check the input") {}
+                }
+            }
+            else if let alert = alert {
+                self.presentAlert(withTitle: "", message: alert.errorMessage)
+            }
+        }
+    }
+}

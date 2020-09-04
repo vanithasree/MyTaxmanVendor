@@ -33,12 +33,22 @@ struct ContactDetailsInput {
     var landline : String?
     
 }
+struct BusinessDetailsInput {
+    
+    var businessName: String?
+    var abn: String?
+    var streetAddress:String?
+    var location : String?
+    var website: String?
+    
+}
 
 
 class AuthViewModel {
     
     var registerInputs: RegisterInput?
     var contactDetails : ContactDetailsInput?
+    var businessDetails : BusinessDetailsInput?
     
     func validateRegisterInputs() -> [ValidationMessage] {
         
@@ -56,6 +66,22 @@ class AuthViewModel {
         let password = validatePassword(registerInputs.password)
         
         let validated = [businessName,contactName,mobile, email, abn, password]
+        
+        let fields = validated.filter({!$0.status})
+        
+        result.append(contentsOf: fields)
+        return result
+    }
+    func validateBusinessDetailsInputs() -> [ValidationMessage] {
+        
+        var result : [ValidationMessage] = []
+        let businessName =  validateBusinessName(text: businessDetails?.businessName)
+        let abn = validateAbnName(text: businessDetails?.abn)
+        let streetAddress = validateAddressLine1(businessDetails?.streetAddress)
+        let location = validateAddressLine2(businessDetails?.location)
+        let website = validateWebsite(businessDetails?.website)
+        
+        let validated = [businessName,abn,streetAddress, location, website]
         
         let fields = validated.filter({!$0.status})
         
@@ -92,10 +118,10 @@ class AuthViewModel {
     }
     func validateLocationText(text:String?) -> ValidationMessage {
         guard let name = text, !name.isBlank else {
-            return (ValidationMessage(status: false, errorMessage:"Location should not be empty", tag:1))
+            return (ValidationMessage(status: false, errorMessage:"Location should not be empty", tag:100))
         }
         
-        return (ValidationMessage(status: true, errorMessage: "", tag: 1))
+        return (ValidationMessage(status: true, errorMessage: "", tag: 100))
     }
     
     
@@ -393,21 +419,21 @@ class AuthViewModel {
     
     func validateWebsite(_ name: String?) -> ValidationMessage {
         guard let name = name, !name.isBlank else {
-            return (ValidationMessage(status: true, errorMessage: "Website is required", tag:106))
+            return (ValidationMessage(status: false, errorMessage: "Website is required", tag:107))
         }
         if name.isValidUrl(string: name) {
-            return (ValidationMessage(status: true, errorMessage: "", tag: 106))
+            return (ValidationMessage(status: true, errorMessage: "", tag: 107))
         }
         else {
-            return (ValidationMessage(status: false, errorMessage: "Website is invalid", tag: 106))
+            return (ValidationMessage(status: false, errorMessage: "Website is invalid", tag: 107))
         }
-        return (ValidationMessage(status: true, errorMessage: "", tag: 106))
+
     }
 
     
     func validateAddressLine2(_ name: String?) -> ValidationMessage {
         guard let name = name, !name.isBlank else {
-            return (ValidationMessage(status: true, errorMessage: "Location is required", tag:106))
+            return (ValidationMessage(status: false, errorMessage: "Location is required", tag:106))
         }
         /* if name.isName {
          return (ValidationMessage(status: true, errorMessage: "", tag: 100))

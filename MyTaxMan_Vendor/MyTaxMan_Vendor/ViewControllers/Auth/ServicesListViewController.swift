@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Alamofire
+
+
 
 class ServicesListViewController: UIViewController {
     
@@ -14,9 +17,12 @@ class ServicesListViewController: UIViewController {
     @IBOutlet weak var listTableView: UITableView!
     var arrSelectedRows:[Int] = []
     var selectedServicesString : String = ""
+    var profileDetails : VenProfileBase?
+    var isFromSettings : Bool = false
     
-    var optionsArray:[String] = ["Tax Returns", "Accounting", "Financial Planning", "Super Funds", "Audit", "Legal Advice"]
+    var optionsArray:[String] = ["Tax Returns", "Accounting", "Financial Planning", "Super Fund", "Audit", "Legal Advice"]
     var delegate : choosenServicesOrLocationDelegate?
+    private var profileViewModel = ProfileViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,13 +66,40 @@ class ServicesListViewController: UIViewController {
                 print("\(index):\(value)")
                 tempArray.append(self.optionsArray[value])
             }
-            
             let finalString = tempArray.joined(separator: ",")
-            self.delegate?.choosenServicesFromTheList(services: finalString)
-            self.navigationController?.popViewController(animated: true)
+            
+            if self.isFromSettings {
+                self.updateServiceTypes(finalType: finalString)
+            }
+            else {
+                self.delegate?.choosenServicesFromTheList(services: finalString)
+                self.navigationController?.popViewController(animated: true)
+            }
         }
         else {
             self.showToast(message: "Please select atleast one")
+        }
+    }
+    
+    func updateServiceTypes(finalType:String) {
+        let params : Parameters = [
+            "vendorid" : UserDetails.shared.userId, "service_types": finalType]
+        LoadingIndicator.shared.show(forView: self.view)
+        
+        profileViewModel.updateServiceTypes(input: params) { (result: DraftQuoteBase?, alert: AlertMessage?) in
+            LoadingIndicator.shared.hide()
+            if let result = result{
+                if let success = result.code, success == "1" {
+                    self.presentAlert(withTitle: "", message: "Updated successfully") {
+                        self.navigationController?.popViewController(animated: true)
+                    }
+                }
+                else {
+                    self.presentAlert(withTitle: "", message: "") {}
+                }
+            } else if let alert = alert {
+                self.presentAlert(withTitle: "", message: alert.errorMessage)
+            }
         }
     }
     

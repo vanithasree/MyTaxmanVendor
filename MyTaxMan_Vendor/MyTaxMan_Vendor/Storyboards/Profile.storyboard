@@ -330,6 +330,51 @@
             </objects>
             <point key="canvasLocation" x="2786" y="58"/>
         </scene>
+        <!--Wallet View Controller-->
+        <scene sceneID="yOw-Je-3iO">
+            <objects>
+                <viewController storyboardIdentifier="WalletViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="oix-xn-aAp" customClass="WalletViewController" customModule="MyTaxMan_Vendor" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wsk-UQ-z21">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ktv-wA-yBV" customClass="WMSegment" customModule="WMSegmentControl">
+                                <rect key="frame" x="0.0" y="44" width="414" height="60"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="x30-d7-cgl"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="buttonTitles" value="Wallet, Payment History, Credit History"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="buttonImages" value="profile, profile,profile"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JGF-xV-ECS">
+                                <rect key="frame" x="0.0" y="104" width="414" height="758"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Ktv-wA-yBV" firstAttribute="trailing" secondItem="xnD-gc-rqC" secondAttribute="trailing" id="DtA-A2-qUT"/>
+                            <constraint firstItem="xnD-gc-rqC" firstAttribute="trailing" secondItem="JGF-xV-ECS" secondAttribute="trailing" id="Kim-cg-6fi"/>
+                            <constraint firstItem="Ktv-wA-yBV" firstAttribute="leading" secondItem="xnD-gc-rqC" secondAttribute="leading" id="PWK-Tk-7cQ"/>
+                            <constraint firstItem="JGF-xV-ECS" firstAttribute="top" secondItem="Ktv-wA-yBV" secondAttribute="bottom" id="Pca-xS-icV"/>
+                            <constraint firstItem="JGF-xV-ECS" firstAttribute="leading" secondItem="xnD-gc-rqC" secondAttribute="leading" id="UCt-ax-0oJ"/>
+                            <constraint firstItem="xnD-gc-rqC" firstAttribute="bottom" secondItem="JGF-xV-ECS" secondAttribute="bottom" id="coN-ZT-fPO"/>
+                            <constraint firstItem="Ktv-wA-yBV" firstAttribute="top" secondItem="xnD-gc-rqC" secondAttribute="top" id="oVk-zT-li5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="xnD-gc-rqC"/>
+                    </view>
+                    <connections>
+                        <outlet property="segmentControl" destination="Ktv-wA-yBV" id="Dda-Ro-3yi"/>
+                        <outlet property="walletTableView" destination="JGF-xV-ECS" id="Sst-Rv-qGe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="obZ-QX-jly" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3500.0000000000005" y="56.919642857142854"/>
+        </scene>
     </scenes>
     <resources>
         <image name="callerPic" width="50" height="50"/>

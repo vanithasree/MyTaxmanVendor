@@ -45,17 +45,21 @@ class ProfileHeaderTableViewCell: UITableViewCell {
         
         jobsWonValueLabel.setLabelCustomProperties(titleText: "", textColor: .black, font: UIFont(name:Font.FontName.PoppinsMedium.rawValue, size: Utility.dynamicSize(18.0)), numberOfLines: 1, alignment: .center)
         
-         profileImageView.layer.cornerRadius = profileImageView.frame.size.width/2.0
-    
+        profileImageView.layer.cornerRadius = profileImageView.frame.size.width/2.0
         
-        
+        creditsBtn.backgroundColor = ColorManager.backgroundGrey.color
+        creditsBtn.titleLabel?.font = UIFont(name:Font.FontName.PoppinsMedium.rawValue, size: Utility.dynamicSize(15.0))
+        creditsBtn.setTitleColor(ColorManager.darkGrey.color, for: .normal)
+       
     }
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         profileImageView.layer.cornerRadius = profileImageView.frame.size.width/2.0
+        creditsBtn.cornerRadius = 7.5
         profileImageView.backgroundColor = .green
         profileImageView.contentMode = .scaleAspectFit
-       
+        
     }
     
     func setCellData(data: VenProfileBase?) {
@@ -78,6 +82,7 @@ class ProfileHeaderTableViewCell: UITableViewCell {
         self.ratingValueLabel.text = data?.averageRating?.first?.average_rating ?? "0"
         self.reviewsValueLabel.text = data?.reviewCount?.first?.review_count ?? "0"
         self.jobsWonValueLabel.text = data?.jobWon?.first?.jobwon_count ?? "0"
+        self.creditsBtn.setTitle(  "  \(data?.desc?.first?.wallet_balance ?? "0") credits   ", for: .normal)
     }
     
     

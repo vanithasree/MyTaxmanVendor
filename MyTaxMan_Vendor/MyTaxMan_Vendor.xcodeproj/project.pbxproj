@@ -136,6 +136,14 @@
 		0BF6D2D02500106600586C51 /* AddDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF6D2CF2500106600586C51 /* AddDescriptionViewController.swift */; };
 		0BF6D2D22500653D00586C51 /* ContactDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF6D2D12500653D00586C51 /* ContactDetailsViewController.swift */; };
 		0BF6D2D42500716A00586C51 /* BusinessDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF6D2D32500716A00586C51 /* BusinessDetailsViewController.swift */; };
+		0BF6D2D62501C2DE00586C51 /* VenBusinessDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF6D2D52501C2DE00586C51 /* VenBusinessDetails.swift */; };
+		0BF6D2D82501C40800586C51 /* VenContactDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF6D2D72501C40800586C51 /* VenContactDetails.swift */; };
+		0BF6D2DA2501C7E500586C51 /* WalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF6D2D92501C7E500586C51 /* WalletViewController.swift */; };
+		0BF6D2DD2501CA6A00586C51 /* WalletTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF6D2DB2501CA6A00586C51 /* WalletTableViewCell.swift */; };
+		0BF6D2DE2501CA6A00586C51 /* WalletTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BF6D2DC2501CA6A00586C51 /* WalletTableViewCell.xib */; };
+		0BF6D2E02501D40F00586C51 /* VenRechargeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF6D2DF2501D40F00586C51 /* VenRechargeModel.swift */; };
+		0BF6D2E32501D7AA00586C51 /* PaymentHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF6D2E12501D7AA00586C51 /* PaymentHistoryTableViewCell.swift */; };
+		0BF6D2E42501D7AA00586C51 /* PaymentHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BF6D2E22501D7AA00586C51 /* PaymentHistoryTableViewCell.xib */; };
 		0BF9EF9A24FE04D4000EB627 /* NotReviewedListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF9EF9824FE04D4000EB627 /* NotReviewedListTableViewCell.swift */; };
 		0BF9EF9B24FE04D4000EB627 /* NotReviewedListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BF9EF9924FE04D4000EB627 /* NotReviewedListTableViewCell.xib */; };
 		0BF9EF9D24FE110F000EB627 /* SendAReplyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF9EF9C24FE110F000EB627 /* SendAReplyViewController.swift */; };
@@ -328,6 +336,14 @@
 		0BF6D2CF2500106600586C51 /* AddDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDescriptionViewController.swift; sourceTree = "<group>"; };
 		0BF6D2D12500653D00586C51 /* ContactDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailsViewController.swift; sourceTree = "<group>"; };
 		0BF6D2D32500716A00586C51 /* BusinessDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessDetailsViewController.swift; sourceTree = "<group>"; };
+		0BF6D2D52501C2DE00586C51 /* VenBusinessDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenBusinessDetails.swift; sourceTree = "<group>"; };
+		0BF6D2D72501C40800586C51 /* VenContactDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenContactDetails.swift; sourceTree = "<group>"; };
+		0BF6D2D92501C7E500586C51 /* WalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewController.swift; sourceTree = "<group>"; };
+		0BF6D2DB2501CA6A00586C51 /* WalletTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletTableViewCell.swift; sourceTree = "<group>"; };
+		0BF6D2DC2501CA6A00586C51 /* WalletTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WalletTableViewCell.xib; sourceTree = "<group>"; };
+		0BF6D2DF2501D40F00586C51 /* VenRechargeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenRechargeModel.swift; sourceTree = "<group>"; };
+		0BF6D2E12501D7AA00586C51 /* PaymentHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentHistoryTableViewCell.swift; sourceTree = "<group>"; };
+		0BF6D2E22501D7AA00586C51 /* PaymentHistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentHistoryTableViewCell.xib; sourceTree = "<group>"; };
 		0BF9EF9824FE04D4000EB627 /* NotReviewedListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotReviewedListTableViewCell.swift; sourceTree = "<group>"; };
 		0BF9EF9924FE04D4000EB627 /* NotReviewedListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotReviewedListTableViewCell.xib; sourceTree = "<group>"; };
 		0BF9EF9C24FE110F000EB627 /* SendAReplyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendAReplyViewController.swift; sourceTree = "<group>"; };
@@ -840,6 +856,7 @@
 				0BF6D2CF2500106600586C51 /* AddDescriptionViewController.swift */,
 				0BF6D2D12500653D00586C51 /* ContactDetailsViewController.swift */,
 				0BF6D2D32500716A00586C51 /* BusinessDetailsViewController.swift */,
+				0BF6D2D92501C7E500586C51 /* WalletViewController.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -858,6 +875,9 @@
 			isa = PBXGroup;
 			children = (
 				0BF6D2BD24FFE9E800586C51 /* VenProfile.swift */,
+				0BF6D2D52501C2DE00586C51 /* VenBusinessDetails.swift */,
+				0BF6D2D72501C40800586C51 /* VenContactDetails.swift */,
+				0BF6D2DF2501D40F00586C51 /* VenRechargeModel.swift */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -877,6 +897,10 @@
 				0BF6D2C524FFEEAD00586C51 /* ProfileHeaderTableViewCell.xib */,
 				0BF6D2CB24FFF70400586C51 /* ProfileScoreTableViewCell.swift */,
 				0BF6D2CC24FFF70400586C51 /* ProfileScoreTableViewCell.xib */,
+				0BF6D2DB2501CA6A00586C51 /* WalletTableViewCell.swift */,
+				0BF6D2DC2501CA6A00586C51 /* WalletTableViewCell.xib */,
+				0BF6D2E12501D7AA00586C51 /* PaymentHistoryTableViewCell.swift */,
+				0BF6D2E22501D7AA00586C51 /* PaymentHistoryTableViewCell.xib */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -1059,6 +1083,7 @@
 				0BE7C25224F4EBE700B97238 /* GetPlacesTableViewCell.xib in Resources */,
 				3B994D1E24FFC7DC00E1C8B4 /* RightViewCell.xib in Resources */,
 				0BE434CA24ED56C8000F6C22 /* Poppins-SemiBold.ttf in Resources */,
+				0BF6D2E42501D7AA00586C51 /* PaymentHistoryTableViewCell.xib in Resources */,
 				0BAB4BB624FD326F00C515D9 /* CallOptionTableViewCell.xib in Resources */,
 				0BE7C24C24F4DE6800B97238 /* ServiceListTableViewCell.xib in Resources */,
 				0BE434C224ED56C8000F6C22 /* ringback.wav in Resources */,
@@ -1096,6 +1121,7 @@
 				3B994D1424FFC7DC00E1C8B4 /* CheckBoxTableViewCell.xib in Resources */,
 				3B994D1524FFC7DC00E1C8B4 /* LeftViewCell.xib in Resources */,
 				0BE434C524ED56C8000F6C22 /* Poppins-Medium.ttf in Resources */,
+				0BF6D2DE2501CA6A00586C51 /* WalletTableViewCell.xib in Resources */,
 				0B7FB90924F608A500DCFD07 /* taskDetailTableViewCell.xib in Resources */,
 				0B7FB90524F6021600DCFD07 /* DetailHeaderViewTableViewCell.xib in Resources */,
 			);
@@ -1228,6 +1254,7 @@
 				0B7FB90424F6021600DCFD07 /* DetailHeaderViewTableViewCell.swift in Sources */,
 				0BE4349624ED5500000F6C22 /* LoadingIndicator.swift in Sources */,
 				0BE4349B24ED562E000F6C22 /* AuthApiManager.swift in Sources */,
+				0BF6D2D82501C40800586C51 /* VenContactDetails.swift in Sources */,
 				3B994CFE24FFC7A900E1C8B4 /* ChatModel.swift in Sources */,
 				0BE434BA24ED56C7000F6C22 /* StringConstants.swift in Sources */,
 				0BE4349024ED5495000F6C22 /* SliderExtension.swift in Sources */,
@@ -1253,6 +1280,7 @@
 				0BE434C124ED56C8000F6C22 /* GCDUtils.swift in Sources */,
 				0BF6D2CD24FFF70400586C51 /* ProfileScoreTableViewCell.swift in Sources */,
 				0B7FB90024F5FE4200DCFD07 /* MobileAndEmailTableViewCell.swift in Sources */,
+				0BF6D2DA2501C7E500586C51 /* WalletViewController.swift in Sources */,
 				0BE434B724ED56C7000F6C22 /* APIManager.swift in Sources */,
 				0B433B5824FC258700A7BD66 /* SubmitQuote.swift in Sources */,
 				0BAB4BBB24FD37A300C515D9 /* CallSettingsTableViewCell.swift in Sources */,
@@ -1274,6 +1302,7 @@
 				0BE4348C24ED5495000F6C22 /* UIPageViewControllerExtension.swift in Sources */,
 				0BE7C26D24F522D300B97238 /* LeadsListViewController.swift in Sources */,
 				0BAB4BB524FD326F00C515D9 /* CallOptionTableViewCell.swift in Sources */,
+				0BF6D2DD2501CA6A00586C51 /* WalletTableViewCell.swift in Sources */,
 				3B994CFC24FFC7A900E1C8B4 /* InboxListModel.swift in Sources */,
 				3B994D1824FFC7DC00E1C8B4 /* JobDetailsTableViewCell.swift in Sources */,
 				0BE7C25924F4ECF500B97238 /* NearByEnum.swift in Sources */,
@@ -1291,6 +1320,7 @@
 				3B994CF324FFC77500E1C8B4 /* InboxDetailsViewController.swift in Sources */,
 				0BE434BF24ED56C8000F6C22 /* Config.swift in Sources */,
 				3B994D2824FFC82C00E1C8B4 /* InboxApiManager.swift in Sources */,
+				0BF6D2D62501C2DE00586C51 /* VenBusinessDetails.swift in Sources */,
 				3B994CF024FFC77500E1C8B4 /* BusinessProfileViewController.swift in Sources */,
 				0BE4349324ED5495000F6C22 /* NotificationExtension.swift in Sources */,
 				0BAB4BB824FD350D00C515D9 /* CallSettingsViewController.swift in Sources */,
@@ -1299,6 +1329,7 @@
 				0B7FB90B24F6183300DCFD07 /* QuoteNowViewController.swift in Sources */,
 				0BE434BB24ED56C7000F6C22 /* AppStoryboards.swift in Sources */,
 				0B433B5424F7EC4100A7BD66 /* NoDataView.swift in Sources */,
+				0BF6D2E02501D40F00586C51 /* VenRechargeModel.swift in Sources */,
 				0BE4349224ED5495000F6C22 /* UILabelExtension.swift in Sources */,
 				0BF9EF9A24FE04D4000EB627 /* NotReviewedListTableViewCell.swift in Sources */,
 				0B433B6024FC34DC00A7BD66 /* CallApiManager.swift in Sources */,
@@ -1340,6 +1371,7 @@
 				0B7FB91724F62F5B00DCFD07 /* LeadApiManager.swift in Sources */,
 				3B994CF424FFC77500E1C8B4 /* QuoteDetailsViewController.swift in Sources */,
 				3B994CF124FFC77500E1C8B4 /* ChatViewController.swift in Sources */,
+				0BF6D2E32501D7AA00586C51 /* PaymentHistoryTableViewCell.swift in Sources */,
 				0BF6D2D22500653D00586C51 /* ContactDetailsViewController.swift in Sources */,
 				0BE4348924ED5495000F6C22 /* ArrayExtension.swift in Sources */,
 			);

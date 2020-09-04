@@ -81,14 +81,9 @@ class LeadsListViewController: BaseViewController {
     
     @IBAction func didTapServiceAreaViewBtn(_ sender: UIButton) {
         
-        /*  let serviceAreaVC = ServiceAreaViewController.instantiateFromAppStoryboard(appStoryboard: .Leads)
-         serviceAreaVC.hidesBottomBarWhenPushed = true
-         self.navigationController?.pushViewController(serviceAreaVC, animated: true)*/
-        
-        let checkOutVC = CheckOutViewController.instantiateFromAppStoryboard(appStoryboard: .Leads)
-        checkOutVC.hidesBottomBarWhenPushed = true
-        checkOutVC.choosenAmount = "100.0"
-        self.navigationController?.pushViewController(checkOutVC, animated: true)
+        let serviceAreaVC = ServiceAreaViewController.instantiateFromAppStoryboard(appStoryboard: .Leads)
+        serviceAreaVC.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(serviceAreaVC, animated: true)
     }
     
     

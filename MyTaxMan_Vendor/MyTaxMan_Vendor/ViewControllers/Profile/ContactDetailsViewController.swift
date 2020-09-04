@@ -8,6 +8,7 @@
 
 import UIKit
 import TweeTextField
+import Alamofire
 
 class ContactDetailsViewController: BaseViewController {
     
@@ -78,6 +79,7 @@ class ContactDetailsViewController: BaseViewController {
             return
             
         }
+        self.updateContactDetails()
         
     }
     
@@ -143,6 +145,28 @@ extension ContactDetailsViewController : UITextFieldDelegate {
             }
             field.showInfo(errorMessage)
             
+        }
+    }
+}
+extension ContactDetailsViewController {
+    func updateContactDetails() {
+        let params : Parameters = ["vendorid" : UserDetails.shared.userId, "contactname" :self.contactPersonTextField.text ?? "", "landlineno" : self.landLineTextField.text ?? "",
+                                   "emailaddress" : self.emailAddressTextField.text ?? ""]
+        LoadingIndicator.shared.show(forView: self.view)
+        profileViewModel.updateVendorContactDetails(input: params) { (result: VenContactDetailsBase?, alert: AlertMessage?) in
+            LoadingIndicator.shared.hide()
+            if let result = result{
+                if let success = result.code, success == "1" {
+                    self.presentAlert(withTitle: "", message: "Updated successfully") {
+                        self.navigationController?.popViewController(animated: true)
+                    }
+                }
+                else {
+                    self.presentAlert(withTitle: "", message: "") {}
+                }
+            } else if let alert = alert {
+                self.presentAlert(withTitle: "", message: alert.errorMessage)
+            }
         }
     }
 }

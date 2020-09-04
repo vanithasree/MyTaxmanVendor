@@ -30,9 +30,12 @@ class BusinessDetailsViewController: BaseViewController {
     
     @IBOutlet weak var websiteTextField: TweeAttributedTextField!
     
+    
+    
     private var authViewModel = AuthViewModel()
     private var profileViewModel = ProfileViewModel()
     var vendorProfileDetails : VenProfileBase?
+    var base64String : String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,6 +67,42 @@ class BusinessDetailsViewController: BaseViewController {
     
     @objc func doneTappedInBP() {
         self.view.endEditing(true)
+        let inputs : BusinessDetailsInput = .init(businessName: self.businessNameTextField.text, abn: self.abnTextfield.text, streetAddress: self.streetAddressTextField.text, location: self.locationTextField.text, website: self.websiteTextField.text)
+        authViewModel.businessDetails = inputs
+        
+        let validationResult = authViewModel.validateBusinessDetailsInputs()
+        
+        if !validationResult.isEmpty {
+            self.businessNameTextField.hideInfo()
+            abnTextfield.hideInfo()
+            streetAddressTextField.hideInfo()
+            locationTextField.hideInfo()
+            websiteTextField.hideInfo()
+            
+            
+            print(validationResult)
+            validationResult.forEach { (validation) in
+                
+                switch validation.tag {
+                case 1:
+                    businessNameTextField.showInfo(validation.errorMessage ?? "")
+                case 10:
+                    abnTextfield.showInfo(validation.errorMessage ?? "")
+                case 105:
+                    streetAddressTextField.showInfo(validation.errorMessage ?? "")
+                case 106:
+                    locationTextField.showInfo(validation.errorMessage ?? "")
+                case 107:
+                    websiteTextField.showInfo(validation.errorMessage ?? "")
+                    
+                default:
+                    break
+                }
+            }
+            return
+            
+        }
+        self.updateBusinessProfile()
     }
     
     override func viewDidLayoutSubviews() {
@@ -96,12 +135,21 @@ class BusinessDetailsViewController: BaseViewController {
         textField.tag = tag
         textField.backgroundColor = .clear
         textField.keyboardType = keypadType
+        textField.clearButtonMode = .always
         textField.delegate = self
     }
     
     
     @IBAction func onTapProfilePicBtn(_ sender: UIButton) {
-        
+        self.openCamera()
+    }
+    fileprivate func openCamera() {
+        CameraHandler.shared.showActionSheet(vc: self )
+        CameraHandler.shared.imagePickedBlock = { (image,name) in
+            self.profileImageView.image = image
+            let imageData: Data? = image.jpegData(compressionQuality: 1.0)
+            self.base64String = imageData?.base64EncodedString(options: .lineLength64Characters) ?? ""
+        }
     }
     /*
      // MARK: - Navigation
@@ -136,8 +184,8 @@ extension BusinessDetailsViewController : UITextFieldDelegate {
                 errorMessage = authViewModel.validateAddressLine1(field.text).errorMessage ?? ""
             case locationTextField:
                 errorMessage = authViewModel.validateAddressLine2(field.text).errorMessage ?? ""
-            case descriptionTextField:
-                errorMessage = authViewModel.validateLandline(text: field.text).errorMessage ?? ""
+            case websiteTextField:
+                errorMessage = authViewModel.validateWebsite(field.text).errorMessage ?? ""
             default:
                 break
             }
@@ -149,5 +197,35 @@ extension BusinessDetailsViewController : UITextFieldDelegate {
             field.showInfo(errorMessage)
             
         }
+    }
+}
+
+extension BusinessDetailsViewController {
+    func updateBusinessProfile() {
+        
+        let params : Parameters = [
+            "vendorid" : UserDetails.shared.userId,
+            "business_name" : self.businessNameTextField.text ?? "",
+            "street_address" : self.streetAddressTextField.text ?? "",
+            "location" : self.locationTextField.text ?? "",
+            "website" : self.websiteTextField.text ?? "",
+            "description" : self.descriptionTextField.text ?? ""]
+        LoadingIndicator.shared.show(forView: self.view)
+        profileViewModel.updateBusinessProfileDetails(input: params) { (result: VenBusinessDetailsBase?, alert: AlertMessage?) in
+            LoadingIndicator.shared.hide()
+            if let result = result{
+                if let success = result.code, success == "1" {
+                    self.presentAlert(withTitle: "", message: "Updated successfully") {
+                        self.navigationController?.popViewController(animated: true)
+                    }
+                }
+                else {
+                    self.presentAlert(withTitle: "", message: "") {}
+                }
+            } else if let alert = alert {
+                self.presentAlert(withTitle: "", message: alert.errorMessage)
+            }
+        }
+        
     }
 }

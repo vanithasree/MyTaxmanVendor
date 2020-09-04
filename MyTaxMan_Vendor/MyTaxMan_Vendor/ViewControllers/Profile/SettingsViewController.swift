@@ -111,10 +111,14 @@ extension SettingsViewController : UITableViewDataSource, UITableViewDelegate {
         switch indexPath.row {
         case 1:
             self.redirectToProfileScoreVC()
+        case 3:
+            self.redirectToServiceListVC()
         case 4:
             self.redirectToBusinessDetailsVC()
         case 5:
             self.redirectToContactVC()
+        case 6:
+            self.redirectToWalletDetailsVC()
         default:
             break
         }
@@ -153,6 +157,25 @@ extension SettingsViewController {
         scoreVC.vendorProfileDetails = self.profileDetailsBase
         self.navigationController?.pushViewController(scoreVC, animated: true)
     }
+    func redirectToWalletDetailsVC() {
+        let scoreVC = WalletViewController.instantiateFromAppStoryboard(appStoryboard: .Profile)
+        scoreVC.hidesBottomBarWhenPushed = true
+        scoreVC.profileDetails = self.profileDetailsBase
+        self.navigationController?.pushViewController(scoreVC, animated: true)
+    }
+    
+    func redirectToServiceListVC() {
+        let serviceVC = ServicesListViewController.instantiateFromAppStoryboard(appStoryboard: .Auth)
+        serviceVC.selectedServicesString = self.profileDetailsBase?.desc?.first?.service_types ?? ""
+        serviceVC.profileDetails = self.profileDetailsBase
+        serviceVC.isFromSettings = true
+        serviceVC.hidesBottomBarWhenPushed = true
+        //serviceVC.delegate = self
+        self.navigationController?.pushViewController(serviceVC, animated: true)
+    }
+    
+
+    
     func getProfileDetails() {
         if isNeedToLoadApi {
             
@@ -180,5 +203,14 @@ extension SettingsViewController {
                 }
             }
         }
+    }
+}
+extension SettingsViewController : choosenServicesOrLocationDelegate {
+    func choosenServicesFromTheList(services stringValue: String) {
+        
+    }
+    
+    func choosenLocationFromTheList(location stringValue: String) {
+        
     }
 }
